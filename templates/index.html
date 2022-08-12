@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>TGS Salt Identification Challenge</title>
+  </head>
+  <body style="background-color: darkorange">
+    <center>
+      <h1 style="color: white">TGS Salt Identification Challenge</h1>
+    </center>
+    <center>
+      <p style="color: white">
+        Segment salt deposits beneath the Earth's surface.<a
+          href="https://www.kaggle.com/c/tgs-salt-identification-challenge/"
+        >
+          Join now and compete!</a
+        >
+      </p>
+    </center>
+    <hr style="color: black">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <div class="text-white">
+      <p style="background-color: yellow; color:black">
+        This app takes seismic images for the competition "Tgs Salt Identification Challenge" in ".png" format, processes it and returns
+        predictions for segmented salt depost maps using a pre-trained tensorflow U-NET model which achieved an iou score of 0.786 on the main competition. Below are the requirements the input data must satisy, which if aren't, will give errors.
+        <ul style="background-color: yellow; color:black">
+          <li>File should be a png image stored in ".png" format</li>
+          <li>Image should have standard height and width of 101 pixels</li>
+          <li>Model can process only one image at a time</li>
+        </ul>
+      Output will be the predicted mask stored in png format of the same width as the image. Download will automatically start after the file is uploaded,processed and the output is generated.<br ><p style="background-color: yellow;color: red;">Warning: App can process only one image at a time.</p>
+      </p>  
+      <form 
+        action="/uploader"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="file" />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
